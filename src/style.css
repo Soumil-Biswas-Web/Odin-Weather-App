@@ -1,0 +1,148 @@
+* {
+    color: #FFFFFF;
+    font-family: 'Inter';
+    /* font-size: 20px; */
+    font-size: 1.2em;
+    background-color: #232323;
+}
+
+h5, h4 {
+    font-size: 15px;
+    font-weight: lighter;;
+}
+
+body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#content {
+    /* width: 360px; */
+    /* height: 800px; */
+    height: 100vh;
+    width: min(45vh, 100vw);
+}
+
+button {
+    border: none;
+}
+
+dialog {
+    border: none;
+}
+
+form {
+    width: 360px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    border: none;
+    border-bottom: white solid 1px;
+}
+
+dialog button {
+    padding-top: 20px;    
+}
+
+form .task_difficulty {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+}
+
+.task_difficulty p {
+    grid-column: 1 / 5;
+}
+
+form .task_priority{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+}
+
+.task_priority p {
+    grid-column: 1 / 5;
+}
+
+.permatask_bloc {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.permatask_bloc label {
+    padding-top: 0;
+}
+
+input[type="checkbox"] {
+    all: unset;
+    width: .7em;
+    height: .7em;
+    display: inline-block;
+    background: #232323;
+    box-shadow:0px 0px 0px 2px white inset;
+
+}
+
+input[type=checkbox]:checked {
+    appearance: auto;
+    accent-color: white;
+}
+
+input[type="radio"] {
+    all: unset;
+    width: .7em;
+    height: .7em;
+    display: inline-block;
+    background: #232323;
+    box-shadow:0px 0px 0px 2px white inset;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    all: unset;
+    width: .7em;
+    height: .7em;
+    display: inline-block;
+    background: white;
+    box-shadow:0px 0px 0px 2px white inset;
+    border-radius: 50%;
+}
+
+form label {
+    padding-top: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list_item {
+    display: grid;
+    grid-template: 1fr / repeat(3, auto);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list_item p {
+    align-self: start;
+}
+
+.list_item div {
+    margin-right: 10px;
+}
+
+/* -- For Mobile Phones -- */
+
+@media(max-width: 700px) {
+    * {
+        font-size: 1.2em;
+    }
+}
