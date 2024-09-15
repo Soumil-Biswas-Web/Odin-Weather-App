@@ -9,7 +9,68 @@
   </head>
   <body>
     <div id="content">
-
+      <div class="entry">
+        <form id="entry_form">
+          <div class="top">
+            <label for="location">Enter Task</label>
+            <input type="text" id="location" name="location" placeholder="Enter Location: " required>
+          </div>
+          <button class="submit_button" type="submit">Get Weather Updates</button>
+        </form>
+      </div>
+      <div class="display_weather" style="display: none;">
+        <img src="#">
+        <p id="location">Location</p>
+        <p id="weather"></p>
+        <p id="desc"></p>
+      </div>
     </div>
   </body>
 </html>
+
+<script>
+  const img = document.querySelector('img');
+  const pLocation = document.querySelector('#location');
+  const pWeather = document.querySelector('#weather');
+  const pDesc = document.querySelector('#desc');
+
+  const getWeather = (location = "location") => {
+
+    const showWeather = (response) => {
+      document.querySelector(".display_weather").style.display = "block";
+      console.log(response);
+      pLocation.textContent = response.resolvedAddress;
+      pWeather.textContent = response.currentConditions.conditions;
+      pDesc.textContent = response.description;
+    };
+
+    fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + location + '?unitGroup=us&key=2P7YP3JNTHQ7FNAHTNBSU6MZP&contentType=json')
+      .then(function(response) {
+        let result = response.json();
+        console.log(result);
+        return result;
+      })
+      .then(function(response) {
+        showWeather(response);
+      })
+  }
+
+  // getWeather("Kolkata");
+
+  let form;
+
+  form = document.querySelector("#entry_form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // console.log("Doint it");
+    parseFormData();
+  });
+
+  const parseFormData = () => {
+    let data = new FormData(form);
+    let location = data.get("location");
+    // console.log(location);
+    getWeather(location);
+  }
+
+</script>
