@@ -1,6 +1,6 @@
-# Odin-Webpack-Template-Repositrory
+# Odin-Weather-App
 
-A template for making webpack repositories from scratch.
+A weather display app made for practicing API calls in javascript.
 
 ## Getting Started
 
