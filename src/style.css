@@ -1,0 +1,55 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(201, 240, 255, 0.336);
+    margin: 0;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;    
+    border-color: rgb(19, 18, 18);
+    font-weight: 500;
+    width: min(65vw, 500px);
+    background-color: whitesmoke;
+}
+
+.display_weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-wrap: pretty;
+}
+
+.display_weather img {
+    height: 120px;
+    margin: 15px 0;
+}
+
+form {
+    gap: 10px;
+    display: flex;
+}
+
+input, button {
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+input{
+    background-color: whitesmoke;
+}

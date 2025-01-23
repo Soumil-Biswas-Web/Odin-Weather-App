@@ -1,10 +1,11 @@
 import './style.css';
 import pageLoad from './modules/pageLoad';
+import formSubmit from './modules/formsubmit';
 
 // Load Content Page
 
 const init = () => {
-    var content = document.createElement("div");
+    let content = document.createElement("div");
     content.setAttribute("id", "content");
     // Load all DOM elements
     content = pageLoad(content); 
@@ -16,3 +17,5 @@ const init = () => {
 init();
 
 console.log("DOM created");
+
+formSubmit();
